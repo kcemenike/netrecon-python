@@ -11,11 +11,36 @@ def help():
         NET RECON
         ---------
         This function allows a user to passively or actively detect hosts on a network
+        
+        Usage
+        -----
+        python net_recon.py {-p/-a} -i INTERFACE
+        
         Args
         ----
-        -p INTERFACE: Passive recon on listen interface
-        --passive INTERFACE: Passive recon on listening interface
-            Example: python net_recon.py -p "Wi-Fi"
+        -p / --passive : Passive listen on interface specified by -i or --iface
+        -a / --active : Active recon on listen interface specified by -i or --iface
+        -i INTERFACE / --iface INTERFACE: interface to listen on
+        
+        Examples
+        --------
+        To passively listen on WiFi interface
+        _____________________________________
+        python net_recon.py -p -i "Wi-Fi"  
+        python net_recon.py --passive -i Wi-Fi
+        python net_recon.py -p --iface Wi-Fi
+        python net_recon.py -p --i Wi-Fi
+        
+        To actively recon devices on WiFi network
+        _____________________________________
+        python net_recon.py -a -i "Wi-Fi"  
+        python net_recon.py --active -i Wi-Fi
+        python net_recon.py -a --iface Wi-Fi
+        python net_recon.py -a --i Wi-Fi
+        
+        To show this help screen
+        _____________________________________
+        python net_recon.py
         ''')
     return None
 
